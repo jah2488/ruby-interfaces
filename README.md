@@ -17,35 +17,37 @@ This project is a minimalistic approach to adding interface/contract agreement i
 
 First you have an interface
 
-    class CarInterface
+````ruby
+class CarInterface
+ 
+  def start
+  end
 
-        def start
-        end
+  def stop
+  end
 
-        def stop
-        end
+  def self.drive
+  end
 
-        def self.drive
-        end
-
-     end
-
+end
+````
 Then you have a class that Implements that class as an interface
 
-    class Car
-      include Interface
+````ruby
+class Car
+  include Interface
 
-      def start
-      end
+  def start
+  end
 
-      def stop
-      end
+  def stop
+  end
 
-      def self.drive
-      end
-
-      implements CarInterface #This is the magic line
-
+  def self.drive
+  end
+  
+  implements CarInterface #This is the magic line
+````
 And To-Da! you're done! This class now implements that Interface perfectly.
 
 __But What if it didn't?__ - Funny you should ask, I was just about to get to that.
