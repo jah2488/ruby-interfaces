@@ -20,9 +20,11 @@ module Interface
         end
         klass_methods.each do |method_name|
           raise_not_defined(method_name, class_name)     unless interface_methods.include?(method_name)
+          raise ArgumentError                            unless class_name.instance_method(method_name).parameters == instance_method(method_name).parameters
         end
         klass_class_methods.each do |method_name|
           raise_not_defined(method_name, class_name)     unless interface_class_methods.include?(method_name)
+          raise ArgumentError                            unless class_name.method(method_name).parameters == method(method_name).parameters
         end
     end
 
